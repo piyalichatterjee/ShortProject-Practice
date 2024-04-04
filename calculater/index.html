@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./utili.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+
+<body>
+    <div class="container bg flex flex-col items-center content-center">
+        <h1 class="text-center"> Welcome to Calculator me!</h1>
+        <div class="row">
+            <input type="text" class="input">
+        </div>
+        <div class="row ">
+            <button class="button">C</button>
+            <button class="button">%</button>
+            <button class="button">M+</button>
+            <button class="button">M-</button>
+        </div>
+        <div class="row">
+            <button class="button">7</button>
+            <button class="button">8</button>
+            <button class="button">9</button>
+            <button class="button">*</button>
+        </div>
+        <div class="row">
+            <button class="button">4</button>
+            <button class="button">5</button>
+            <button class="button">6</button>
+            <button class="button">/</button>
+        </div>
+        <div class="row">
+            <button class="button">1</button>
+            <button class="button">2</button>
+            <button class="button">3</button>
+            <button class="button">-</button>
+        </div>
+        <div class="row">
+            <button class="button">0</button>
+            <button class="button">.</button>
+            <button class="button">=</button>
+            <button class="button">+</button>
+        </div>
+
+    </div>
+</body>
+<script>
+    let string = ""
+    let buttons = document.querySelectorAll("button")
+    // console.log(buttons)
+    let buttonArray = Array.from(buttons)
+    // console.log(buttonArray)
+    buttonArray.forEach((button) => {
+        //    console.log(button)
+        button.addEventListener("click", (e) => {
+            // console.log(e.target)
+            if (e.target.textContent == "=") {
+                string = eval(string)
+                document.querySelector("input").value = string
+                console.log(string)
+            }
+            else if (e.target.textContent == "C") {
+                string = ""
+                document.querySelector("input").value = string
+            }
+
+            else {
+                // string = string + e.target.innerHTML
+                string = string + e.target.textContent
+                document.querySelector("input").value = string
+                // console.log(string)
+
+            }
+
+        })
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // let string = ""
+    // let buttons = document.querySelectorAll(".button")
+    // // console.log(buttons)
+    // let ary = Array.from(buttons)
+    // // console.log(ary)
+    // ary.forEach((button) => {
+    //     //  console.log(button)
+    //     button.addEventListener("click", (e) => {
+    //         console.log(e.target)
+    //         if (e.target.textContent == "=") {
+    //             string = eval(string)
+    //             console.log(string)
+    //             let b = document.querySelector("input").value = string
+    //             console.log(b)
+    //         }
+    //         else if (e.target.textContent == "c") {
+    //             string = " "
+    //             document.querySelector("input").value = string
+
+    //         }
+    //         else {
+    //             string = string + e.target.textContent
+    //             let a = document.querySelector("input").value = string
+    //             // console.log(string)
+    //             // console.log(a)
+    //         }
+
+
+    //     })
+    // })
+
+</script>
+
+</html>
