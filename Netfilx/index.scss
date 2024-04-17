@@ -1,0 +1,303 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
+        url("https://assets.nflxext.com/ffe/siteui/vlv3/7ca5b7c7-20aa-42a8-a278-f801b0d65fa1/fb548c0a-8582-43c5-9fba-cd98bf27452f/IN-en-20240326-popsignuptwoweeks-perspective_alpha_website_small.jpg");
+    background-position: center;
+    min-height: 60vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.menu {
+    // border: 2px solid goldenrod;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vh;
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+    // padding-top: 2rem;
+}
+.menu .img {
+    width: 12%;
+}
+#btn1 {
+    padding: 0.2rem 1rem;
+    font-size: 0.6rem;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana,
+        sans-serif;
+}
+#btn1 i {
+    // border: 2px solid rgb(72, 5, 16);
+    // color: blue;
+    margin: 0 5px;
+}
+#btn2 {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.6rem;
+    margin-left: 0.5rem;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana,
+        sans-serif;
+    background-color: red;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: background-color 1s ease-in-out;
+}
+#btn2:hover {
+    // background-color: yellow;
+    background-color: rgb(244, 54, 47);
+    // color: black;
+}
+.textBox {
+    width: 100%;
+    // border: 2px solid red;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.textBox h1 {
+    font-size: 3.7vw;
+    font-family: "Roboto", sans-serif;
+    color: aliceblue;
+    // border: 2px solid yellow;
+}
+.textBox h3 {
+    // border: 2px solid yellow;
+    font-size: 2vw;
+    font-family: "Roboto", sans-serif;
+    margin-top: 0.8rem;
+    color: aliceblue;
+}
+.inputBox {
+    margin: 1rem;
+    // border: 2px solid yellow;
+    width: 80%;
+    max-width: 500px;
+    // margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.inputBox input {
+    padding: 0.6rem;
+    // padding-left: 0.2rem;
+    border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.601);
+    border-radius: 3px;
+    width: 60%;
+}
+.inputBox ::placeholder {
+    color: white;
+    font-size: 0.6rem;
+}
+.inputBox #btn {
+    background-color: red;
+    margin: 0.5rem;
+    padding: 0.6rem;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    font-weight: 700;
+    // width: 30%;
+    cursor: pointer;
+    transition: background-color 2s ease-in-out;
+}
+.inputBox #btn:hover {
+    background-color: rgb(244, 54, 47);
+    // background-color: yellow;
+}
+.divide {
+    width: 100%;
+    height: 1.5vh;
+    background-color: rgb(92, 90, 90);
+}
+#vid {
+    bottom: 20%;
+    left: 20%;
+    width: 60%;
+}
+#img1 {
+    width: 80%;
+    // border: 2px solid yellow;
+}
+.playBox {
+    background-color: black;
+    color: rgb(212, 211, 210);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    width: 100%;
+    min-height: 90vh;
+}
+.playBox .text {
+    // border: 2px solid pink;
+    width: 60%;
+    font-family: "Roboto", sans-serif;
+}
+.playBox .text h1 {
+    font-size: 3vw;
+    margin: 1rem;
+    font-weight: 800;
+    // border: 2px solid yellow;
+}
+.playBox h2 {
+    font-size: 0.8rem;
+    margin: 1rem;
+}
+
+.playBox img {
+    width: 70%;
+    position: relative;
+    z-index: 1;
+}
+.playBox video {
+    width: 40%;
+    position: absolute;
+    left: 30%;
+    bottom: 35%;
+}
+.questionBox {
+    background-color: black;
+    color: white;
+    min-height: 100vh;
+}
+.questionBox h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    padding-top: 2rem;
+    font-weight: 900;
+    font-family: "Roboto", sans-serif;
+}
+.question {
+    background-color: rgb(51, 50, 50);
+    // margin: 10px;
+    width: 95%;
+    max-width: 700px;
+    margin: 8px auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 1s ease-in-out;
+}
+.question:hover {
+    background-color: rgb(81, 80, 80);
+}
+.startBox {
+    font-size: 0.63rem;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    margin: 2rem;
+}
+.startBox .inputBox {
+    // border: 2px solid green;
+    // margin:0.5rem 3.2rem;
+    text-align: center;
+    margin: 0.5rem auto;
+    width: 80%;
+    max-width: 500px;
+}
+footer {
+    background-color: black;
+    color: white;
+}
+.contactBox {
+    // border: 2px solid gold;
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+    padding: 2rem 1rem;
+}
+.contactBox .call {
+    font-size: 0.5rem;
+    margin: 10px 5px;
+}
+.contactBox span {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.contactBox .list {
+    // border: 2px solid pink;
+}
+.contactBox .list ul {
+    margin: 15px 0;
+    height: 15vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: start;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.contactBox .list li {
+    margin: 5px;
+    list-style: none;
+    text-decoration: underline;
+    font-size: 0.5rem;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+}
+.contactBox button {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.6rem;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+    margin: 10px 5px;
+}
+.contactBox i {
+    padding: 0 5px;
+}
+.contactBox h5 {
+    font-size: 0.5rem;
+    margin: 5px;
+    font-family: "Roboto", sans-serif;
+}
+@media only screen and (min-width: 1000px) and (max-width:3000px) {
+    .main {
+        background-color: blue;
+        background-image: none;
+    }
+    .playBox {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    .playBox #vid {
+        width: 20%;
+        top: 28%;
+        left: 71%;
+    }
+    #img1 {
+        width: 30%;
+    }
+    .playBox img {
+        width: 40%;
+    }
+    .playBox video {
+        width: 25%;
+        top: 15%;
+        left: 68%;
+    }
+}

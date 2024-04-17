@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("./imges/paul-siewert-spcuk2BHwR4-unsplash.jpg");
+  background-position: center;
+  background-size: cover;
+  color: aliceblue;
+  background-repeat: no-repeat;
+}
+
+ul {
+  display: flex;
+  background-color: transparent;
+  -webkit-backdrop-filter: blur(1rem);
+          backdrop-filter: blur(1rem);
+}
+
+li {
+  list-style: none;
+  padding: 0.4rem;
+}
+
+button {
+  display: none;
+}
+
+#icon {
+  margin: 0.3rem 0.5rem;
+  font-size: 1.5rem;
+  height: 8vh;
+  width: 10%;
+}
+
+@media screen and (max-width: 400px) {
+  #navigation {
+    position: fixed;
+    inset: 0 0 0 30%;
+    flex-direction: column;
+    border: 2px solid red;
+    padding: min(20vh, 10rem) 2em;
+    transform: translateX(100%);
+  }
+  #navigation[data-visible=true] {
+    transform: translateX(0%);
+  }
+  button {
+    display: block;
+    position: absolute;
+    width: 1.5rem;
+    border: none;
+    aspect-ratio: 1;
+    top: 2rem;
+    right: 2rem;
+    z-index: 1;
+    background-image: url("./imges/images.png");
+    background-position: center;
+    background-size: cover;
+  }
+  button[aria=true] {
+    background-image: url("./imges/xmark-icon-2048x2047-efomjlqb.png");
+    background-position: center;
+    background-size: cover;
+  }
+}
+@media (min-width: 400px) {
+  #navigation {
+    gap: 1rem;
+    padding-block: 1rem;
+    padding-inline: clamp(2rem, 5vh, 5rem);
+  }
+}/*# sourceMappingURL=index.css.map */

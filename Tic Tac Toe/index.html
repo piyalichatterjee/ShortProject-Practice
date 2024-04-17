@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: rgb(55, 4, 55);
+            color: white;
+            min-height: 5vh;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            padding: 0 1rem;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        .gameContainer {
+            background-color: yellow;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2rem;
+            position: relative;
+            /* min-height: 80vh; */
+        }
+
+        .container {
+            border: 2px solid red;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 40vh;
+            width: 40%;
+            /* position: relative; */
+
+        }
+
+        .container .mainBox {
+            border: 2px solid green;
+            width: 90%;
+            max-width: 200px;
+            /* background-color: aqua; */
+            display: flex;
+            justify-content: space-evenly;
+            height: 12vh;
+
+        }
+
+        .box {
+            border: 2px solid black;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 5vw;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            cursor: pointer;
+
+        }
+
+        .box:hover {
+            background-color: rgb(173, 207, 247);
+        }
+
+        .br-0 {
+            border-right: 0;
+
+        }
+
+        .bl-0 {
+            border-left: 0;
+
+        }
+
+        .bt-0 {
+            border-top: 0;
+        }
+
+        .bb-0 {
+            /* background-color: red; */
+            border-bottom: 0;
+            /* outline: none; */
+        }
+
+        .gameinfo {
+            /* border: 2px solid pink; */
+            padding: 0.5rem;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .imgBox img {
+            width: 0;
+            transition: width 1s ease-in-out;
+        }
+
+        .gameinfo h1 {
+            font-size: 0.8rem;
+        }
+
+        .gameinfo .info {
+            font-size: 0.7rem;
+        }
+
+        .gameinfo button {
+            margin: 0.5rem;
+            padding: 0.2rem 0.8rem;
+            color: blue;
+            font-size: 0.7rem;
+            cursor: pointer;
+            background-color: rgb(96, 193, 232);
+            border: none;
+            border-radius: 3px;
+        }
+
+        .line {
+            background-color: black;
+            width: 0;
+            height: 3px;
+            position: absolute;
+            transition: width 1s ease-in-out;
+            /* top: 0; */
+            /* transform: translate(2vw, -10vw) rotate(135deg); */
+        }
+
+        @media only screen and (min-width:900px) {
+            .gameContainer {
+                /* background-color: aquamarine; */
+                flex-direction: row;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li>
+                My Tic tac toe.com
+            </li>
+        </ul>
+    </nav>
+
+    <div class="gameContainer">
+        <div class="line"></div>
+        <div class="container">
+            <div class="mainBox">
+                <div class="box bl-0 bt-0 br-0"><span class="boxtext "></span></div>
+                <div class="box bt-0 br-0 "><span class="boxtext"></span></div>
+                <div class="box bt-0 br-0"><span class="boxtext"></span></div>
+            </div>
+            <div class="mainBox">
+                <div class="box bl-0 br-0 bt-0"><span class="boxtext "></span></div>
+                <div class="box bt-0 br-0"><span class="boxtext"></span></div>
+                <div class="box bt-0 br-0"><span class="boxtext"></span></div>
+            </div>
+            <div class="mainBox">
+                <div class="box bt-0 bl-0 br-0 bb-0"><span class="boxtext "></span></div>
+                <div class="box bt-0 br-0 bb-0"><span class="boxtext"></span></div>
+                <div class="box bt-0 br-0 bb-0"><span class="boxtext"></span></div>
+            </div>
+        </div>
+        <div class="gameinfo">
+            <h1>Welcome to Tic Tac MyTicTeo</h1>
+            <div>
+                <span id="info">Turn for X</span>
+                <button id="reset">Reset</button>
+            </div>
+            <div class="imgBox">
+                <img src="https://media.tenor.com/906nGAL7Xw0AAAAi/mochi-peachcat-cute-cat.gif" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let music = new Audio("sms_tone.mp3")
+    let audioTurn = new Audio("unknown-imes-62261.mp3")
+    let gameover = new Audio("xperia-x10-sms-1193.mp3")
+    let turn = "X"
+    let isgameover = false
+
+    // function to change the ture
+    let changeTurn = () => {
+        return turn === "X" ? "0" : "X"
+    }
+
+    // function to check for a win
+    let checkWin = () => {
+        let boxtexts = document.getElementsByClassName("boxtext")
+        // console.log(boxtexts)
+        let wins = [
+            [0, 1, 2, 1, -22, 0],//-12vw, -9vw) rotate(90deg)
+            [3, 4, 5, 1, -9, 0],  //5,15,0
+            [6, 7, 8, 1, 4, 0],    //5,25,0
+            [0, 3, 6, -12, -9, 90],
+            [1, 4, 7, -1, -9, 90],
+            [2, 5, 8, 12, -9, 90],
+            [0, 4, 8, -1, -10, 45],
+            [2, 4, 6, 2, -10, 135],
+        ]
+        wins.forEach((e) => {
+            // console.log(e)
+            if ((boxtexts[e[0]].textContent === boxtexts[e[1]].textContent) && (boxtexts[e[2]].textContent === boxtexts[e[1]].textContent) && (boxtexts[e[0]].textContent !== "")) {
+                document.querySelector("#info").textContent = boxtexts[e[0]].textContent + " Won"
+                isgameover = true
+                let p = document.querySelector("img").style.width = "100px"
+                // console.log(p)
+                let b = document.querySelector(".line").style.transform = `translate(${e[3]}vw,${e[4]}vw) rotate(${e[5]}deg)`
+                // console.log(b)
+                let c = document.querySelector(".line").style.width = "30vw"
+                // console.log(c)
+            }
+
+        })
+    }
+    // Game logic
+    // music.play()
+    let boxes = document.querySelectorAll(".box")
+    // console.log(boxes)
+    let arrayBoxs = Array.from(boxes)
+    // console.log(arrayBoxs)
+    arrayBoxs.forEach((element) => {
+        //    console.log(element)
+        let boxText = element.querySelector(".boxtext")
+        // console.log(boxText)
+        element.addEventListener("click", () => {
+            // console.log("hi")
+            if (boxText.textContent === "") {
+                boxText.textContent = turn
+                //  console.log(p)
+                turn = changeTurn()
+                audioTurn.play()
+                checkWin()
+                if (!isgameover) {
+                    document.getElementById("info").textContent = "turn for " + turn
+                }
+                //   let info=document.getElementsByClassName("info")[0].textContent = "turn for " + turn
+                // console.log(info)
+            }
+
+        })
+    })
+
+    // add onclick listener to reset button
+    let reset = document.getElementById("reset")
+    // console.log(reset)
+    reset.addEventListener("click", () => {
+        let boxtexts = document.querySelectorAll(".boxtext")
+        // console.log(boxtexts)
+        let arrayBox = Array.from(boxtexts)
+        // console.log(arrayBox)
+        arrayBox.forEach((element) => {
+            // console.log(element)
+            element.textContent = ""
+        })
+        isgameover = false
+        turn = "X"
+        document.getElementById("info").textContent = "turn for " + turn
+        document.querySelector("img").style.width = "0px"
+        document.querySelector(".line").style.width = "0vw"
+    })
+
+
+
+
+
+
+
+
+    // let box=document.querySelectorAll(".boxtext")
+    // // console.log(box)
+    // let boxh=Array.from(box)
+    // // console.log(boxh)
+    // boxh.forEach((e)=>{
+    //     // console.log(e)
+    // })
+</script>
+
+</html>
+<!-- [0, 1, 2, 5, 5, 0],//-12vw, -9vw) rotate(90deg)
+            [3, 4, 5, 5, 15, 0],  //5,15,0
+            [6, 7, 8, 5, 25, 0],    //5,25,0
+            [0, 3, 6, -5, 15, 90],
+            [1, 4, 7, 5, 15, 90],
+            [2, 5, 8, 15, 15, 90],
+            [0, 4, 8, 5, 15, 45],
+            [2, 4, 6, 5, 15, 135], -->
