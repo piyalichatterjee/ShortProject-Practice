@@ -199,7 +199,7 @@
 
     // function to check for a win
     let checkWin = () => {
-        let boxtexts = document.getElementsByClassName("boxtext")
+         let boxtexts = document.getElementsByClassName("boxtext")
         // console.log(boxtexts)
         let wins = [
             [0, 1, 2, 1, -22, 0],//-12vw, -9vw) rotate(90deg)
@@ -216,17 +216,18 @@
             if ((boxtexts[e[0]].textContent === boxtexts[e[1]].textContent) && (boxtexts[e[2]].textContent === boxtexts[e[1]].textContent) && (boxtexts[e[0]].textContent !== "")) {
                 document.querySelector("#info").textContent = boxtexts[e[0]].textContent + " Won"
                 isgameover = true
-                let p = document.querySelector("img").style.width = "100px"
-                // console.log(p)
-                let b = document.querySelector(".line").style.transform = `translate(${e[3]}vw,${e[4]}vw) rotate(${e[5]}deg)`
-                // console.log(b)
-                let c = document.querySelector(".line").style.width = "30vw"
-                // console.log(c)
+        //         let p = document.querySelector("img").style.width = "100px"
+        //         // console.log(p)
+        //         let b = document.querySelector(".line").style.transform = `translate(${e[3]}vw,${e[4]}vw) rotate(${e[5]}deg)`
+        //         // console.log(b)
+        //         let c = document.querySelector(".line").style.width = "30vw"
+        //         // console.log(c)
             }
 
         })
     }
     // Game logic
+
     // music.play()
     let boxes = document.querySelectorAll(".box")
     // console.log(boxes)
@@ -246,32 +247,33 @@
                 checkWin()
                 if (!isgameover) {
                     document.getElementById("info").textContent = "turn for " + turn
+
                 }
-                //   let info=document.getElementsByClassName("info")[0].textContent = "turn for " + turn
-                // console.log(info)
+    //             //   let info=document.getElementsByClassName("info")[0].textContent = "turn for " + turn
+    //             // console.log(info)
             }
 
         })
     })
 
     // add onclick listener to reset button
-    let reset = document.getElementById("reset")
-    // console.log(reset)
-    reset.addEventListener("click", () => {
-        let boxtexts = document.querySelectorAll(".boxtext")
-        // console.log(boxtexts)
-        let arrayBox = Array.from(boxtexts)
-        // console.log(arrayBox)
-        arrayBox.forEach((element) => {
-            // console.log(element)
-            element.textContent = ""
-        })
-        isgameover = false
-        turn = "X"
-        document.getElementById("info").textContent = "turn for " + turn
-        document.querySelector("img").style.width = "0px"
-        document.querySelector(".line").style.width = "0vw"
-    })
+    // let reset = document.getElementById("reset")
+    // // console.log(reset)
+    // reset.addEventListener("click", () => {
+    //     let boxtexts = document.querySelectorAll(".boxtext")
+    //     // console.log(boxtexts)
+    //     let arrayBox = Array.from(boxtexts)
+    //     // console.log(arrayBox)
+    //     arrayBox.forEach((element) => {
+    //         // console.log(element)
+    //         element.textContent = ""
+    //     })
+    //     isgameover = false
+    //     turn = "X"
+    //     document.getElementById("info").textContent = "turn for " + turn
+    //     document.querySelector("img").style.width = "0px"
+    //     document.querySelector(".line").style.width = "0vw"
+    // })
 
 
 
